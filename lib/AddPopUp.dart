@@ -46,11 +46,10 @@ class PopUPDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('TextField in AlertDialog'),
-      ),
-      body: Center(
-        child: Icon(Icons.add),
+      floatingActionButton: FloatingActionButton(
+        tooltip: 'Add Suggestion',
+        child: const Icon(Icons.add),
+          onPressed: () => _displayDialog(context),
       ),
     );
   }
