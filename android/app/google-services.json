@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "255903381473",
+    "firebase_url": "https://mawaveapp.firebaseio.com",
+    "project_id": "mawaveapp",
+    "storage_bucket": "mawaveapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:255903381473:android:aab0e4529ef0fbf74384a0",
+        "android_client_info": {
+          "package_name": "com.example.my_wave_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "255903381473-ftsfdfjm202cp7jl27oqo00v8648l5rr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoEnvarVt9rs9AbzK4GtvlsdS5dlJSleY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "255903381473-ftsfdfjm202cp7jl27oqo00v8648l5rr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
