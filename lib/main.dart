@@ -16,7 +16,7 @@ class WaveApp extends StatelessWidget{
         primarySwatch : Colors.red,
       ),
       home : Scaffold(
-        body: PopUPDialog(),
+        body: HomeView(),
       ),//LoginRegesterPage(),
     );
   }

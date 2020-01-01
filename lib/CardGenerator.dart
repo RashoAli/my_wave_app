@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'Cards.dart';
+//import 'Cards.dart';
+import 'Test.dart';
 
 class HomeView extends StatelessWidget {
-  var cardsList = cardsListG;
+
+  var cardsList = CardsBulider().ReturnCards();
 
   /// This Widget is the main application widget.
   @override
@@ -19,16 +21,16 @@ class HomeView extends StatelessWidget {
   Widget SuggestionCard(BuildContext context, int index) {
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-      margin: EdgeInsets.all(5),
-      elevation: 3,
-      color: Colors.black12,
+      margin: EdgeInsets.all(8),
+      elevation: 5,
+      color: Colors.white,
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16),
         child: Column(
           children: <Widget>[
             Row(
               children: <Widget>[
-                CircleAvatar(backgroundColor: Colors.white),
+                CircleAvatar(backgroundColor: Colors.greenAccent),
                 SizedBox(width: 20),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -56,7 +58,8 @@ class HomeView extends StatelessWidget {
             SizedBox(
               height: 5,
             ),
-            Divider(color: Colors.black),
+            Divider(color: Colors.black38),
+
             SizedBox(
               height: 5,
             ),
