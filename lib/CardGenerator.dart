@@ -1,14 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-//import 'Cards.dart';
-import 'Test.dart';
+import 'Cards.dart';
+//import 'Test.dart';
 
 class HomeView extends StatelessWidget {
-
   var cardsList = CardsBulider().ReturnCards();
 
   /// This Widget is the main application widget.
   @override
+  Widget ImportanceRewe(BuildContext context, value) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: List.generate(5, (i) {
+        return Icon(
+          i < value ? Icons.monetization_on : Icons.attach_money,
+          color: Colors.grey,
+          size: 23,
+        );
+      }),
+    );
+  }
+
   Widget build(BuildContext context) {
     return Container(
       child: new ListView.builder(
@@ -21,8 +33,8 @@ class HomeView extends StatelessWidget {
   Widget SuggestionCard(BuildContext context, int index) {
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-      margin: EdgeInsets.all(8),
-      elevation: 5,
+      margin: EdgeInsets.all(10),
+      elevation: 10,
       color: Colors.white,
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16),
@@ -44,11 +56,23 @@ class HomeView extends StatelessWidget {
                         Text(cardsList[index].name,
                             style: TextStyle(
                                 fontSize: 15, fontWeight: FontWeight.bold)),
-                        Text(
-                            DateFormat('kk:mm -- d MMM yyyy')
-                                .format(cardsList[index].createDate)
-                                .toString(),
-                            style: TextStyle(color: Colors.black)),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Row(
+                          children: <Widget>[
+                            Text(
+                                DateFormat('kk:mm -- d MMM yyyy')
+                                    .format(cardsList[index].createDate)
+                                    .toString(),
+                                style: TextStyle(color: Colors.black)),
+                            SizedBox(
+                              width: 30,
+                            ),
+                            ImportanceRewe(
+                                context, cardsList[index].investmentPercent),
+                          ],
+                        ),
                       ],
                     ),
                   ],
@@ -59,24 +83,22 @@ class HomeView extends StatelessWidget {
               height: 5,
             ),
             Divider(color: Colors.black38),
-
             SizedBox(
               height: 5,
             ),
             Row(
               children: <Widget>[
                 SizedBox(
-                  width: 60,
+                  width: 10,
                 ),
                 Column(
                   children: <Widget>[
                     Text(cardsList[index].symbol,
                         style: TextStyle(
                             fontSize: 15, fontWeight: FontWeight.bold)),
-                    Text(cardsList[index].companyName)
+                    Text(cardsList[index].companyName),
                   ],
                 ),
-                Spacer(),
                 Spacer(),
                 Flexible(
                   child: Text(cardsList[index].comments),
